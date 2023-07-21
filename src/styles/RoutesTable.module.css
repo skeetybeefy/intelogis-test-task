@@ -1,0 +1,7 @@
+.activeRow, .activeRow:active {
+  background-color: red;
+}
+
+.row {
+  cursor: pointer;
+}

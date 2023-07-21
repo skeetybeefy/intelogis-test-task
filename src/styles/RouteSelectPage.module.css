@@ -1,0 +1,24 @@
+.routeSelectSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.heading {
+  text-align: center;
+}
+
+.selectRouteContainer {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+@media (min-width: 1280px) {
+  .selectRouteContainer {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .selectRouteContainer > *:nth-last-child(0n+1) {
+    grid-row: span 2;
+  }
+}
