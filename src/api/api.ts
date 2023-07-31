@@ -40,7 +40,7 @@ export class API {
     const lngLatRoutePoints: Array<LngLatTuple> = route.points.map(route => route.slice().reverse() as LngLatTuple)
     const lngLatRoutePointsString = lngLatRoutePoints.map(route => route.join(",")).join(";")
     try {
-      const response = await axios.get(`http://router.project-osrm.org/route/v1/driving/${lngLatRoutePointsString}?overview=full&steps=true&geometries=geojson`)
+      const response = await axios.get(`https://router.project-osrm.org/route/v1/driving/${lngLatRoutePointsString}?overview=full&steps=true&geometries=geojson`)
       const points = response.data.routes[0].geometry.coordinates.map((point: LngLatTuple) => point.slice().reverse())
       return points
     } catch (e) {
